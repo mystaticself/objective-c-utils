@@ -56,6 +56,7 @@
 #define append(a,b)                             [a stringByAppendingString:b];
 #define distance(a,b)                           sqrtf((a-b) * (a-b))
 #define animate(dur,curve,anims)                [UIView beginAnimations:nil context:NULL]; [UIView setAnimationDuration:dur]; [UIView setAnimationCurve:curve]; anims; [UIView commitAnimations]
+#define rotate(v,r)                             v.transform = CGAffineTransformMakeRotation(r / 180.0 * M_PI)
 #define addEventListener(id,s,n,o)              [[NSNotificationCenter defaultCenter] addObserver:id selector:s name:n object:o]
 #define removeEventListener(id,n,o)             [[NSNotificationCenter defaultCenter] removeObserver:id name:n object:o]
 #define dispatchEvent(n,o)                      [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
