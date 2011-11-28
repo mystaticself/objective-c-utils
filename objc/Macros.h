@@ -12,6 +12,7 @@
 #define APPLICATION                             [UIApplication sharedApplication]
 #define BUNDLE                                  [NSBundle mainBundle]
 #define MAIN_SCREEN                             [UIScreen mainScreen]
+#define DOCUMENTS_DIR                           [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]
 #define NAV_BAR                                 self.navigationController.navigationBar
 #define TAB_BAR                                 self.tabBarController.tabBar
 #define DATE_COMPONENTS                         NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
