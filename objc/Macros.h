@@ -42,33 +42,36 @@
 #define point(x,y)                              CGPointMake(x, y)
 #define append(a,b)                             [a stringByAppendingString:b];
 
-// UIColor
+// Colors
 #define hex_rgba(c)                             [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
 #define hex_rgb(c)                              [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:1.0]
 
-// UIView
+// Views Getters
 #define frameWidth(v)                           v.frame.size.width
 #define frameHeight(v)                          v.frame.size.height
 #define boundsWidth(v)                          v.bounds.size.width
 #define boundsHeight(v)                         v.bounds.size.height
 #define posX(v)                                 v.frame.origin.x
 #define posY(v)                                 v.frame.origin.y
+
+// View Setters
 #define setPosX(v,x)                            v.frame = CGRectMake(x, posY(v), frameWidth(v), frameHeight(v))
 #define setPosY(v,y)                            v.frame = CGRectMake(posX(v), y, frameWidth(v), frameHeight(v))
 #define setFramePosition(v,x,y)                 v.frame = CGRectMake(x, y, frameWidth(v), frameHeight(v))
 #define setFrameSize(v,w,h)                     v.frame = CGRectMake(posX(v), posY(v), w, h)
 #define setBoundsPosition(v,x,y)                v.bounds = CGRectMake(x, y, boundsWidth(v), boundsHeight(v))
 #define setBoundsSize(v,w,h)                    v.bounds = CGRectMake(posX(v), posY(v), w, h)
-#define animate(dur,curve,anims)                [UIView beginAnimations:nil context:NULL]; [UIView setAnimationDuration:dur]; [UIView setAnimationCurve:curve]; anims; [UIView commitAnimations]
+
+// View Transformations
 #define rotate(v,r)                             v.transform = CGAffineTransformMakeRotation(r / 180.0 * M_PI)
 #define scale(v,sx,sy)                          v.transform = CGAffineTransformMakeScale(sx, sy)
+#define animate(dur,curve,anims)                [UIView beginAnimations:nil context:NULL]; [UIView setAnimationDuration:dur]; [UIView setAnimationCurve:curve]; anims; [UIView commitAnimations]
 
 // Notifications
 #define addEventListener(id,s,n,o)              [[NSNotificationCenter defaultCenter] addObserver:id selector:s name:n object:o]
 #define removeEventListener(id,n,o)             [[NSNotificationCenter defaultCenter] removeObserver:id name:n object:o]
 #define dispatchEvent(n,o)                      [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
 #define dispatchEventWithData(n,o,d)            [[NSNotificationCenter defaultCenter] postNotificationName:n object:o userInfo:d]
-
 
 // User Defaults
 #define boolForKey(k)                           [USER_DEFAULTS boolForKey:k]
