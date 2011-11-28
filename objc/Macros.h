@@ -38,8 +38,15 @@
 
 // Utils
 #define clamp(n,min,max)                        ((n < min) ? min : (n > max) ? max : n)
+#define distance(a,b)                           sqrtf((a-b) * (a-b))
+#define point(x,y)                              CGPointMake(x, y)
+#define append(a,b)                             [a stringByAppendingString:b];
+
+// UIColor
 #define hex_rgba(c)                             [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
 #define hex_rgb(c)                              [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:1.0]
+
+// UIView
 #define frameWidth(v)                           v.frame.size.width
 #define frameHeight(v)                          v.frame.size.height
 #define boundsWidth(v)                          v.bounds.size.width
@@ -52,12 +59,11 @@
 #define setFrameSize(v,w,h)                     v.frame = CGRectMake(posX(v), posY(v), w, h)
 #define setBoundsPosition(v,x,y)                v.bounds = CGRectMake(x, y, boundsWidth(v), boundsHeight(v))
 #define setBoundsSize(v,w,h)                    v.bounds = CGRectMake(posX(v), posY(v), w, h)
-#define point(x,y)                              CGPointMake(x, y)
-#define append(a,b)                             [a stringByAppendingString:b];
-#define distance(a,b)                           sqrtf((a-b) * (a-b))
 #define animate(dur,curve,anims)                [UIView beginAnimations:nil context:NULL]; [UIView setAnimationDuration:dur]; [UIView setAnimationCurve:curve]; anims; [UIView commitAnimations]
 #define rotate(v,r)                             v.transform = CGAffineTransformMakeRotation(r / 180.0 * M_PI)
 #define scale(v,sx,sy)                          v.transform = CGAffineTransformMakeScale(sx, sy)
+
+// Notifications
 #define addEventListener(id,s,n,o)              [[NSNotificationCenter defaultCenter] addObserver:id selector:s name:n object:o]
 #define removeEventListener(id,n,o)             [[NSNotificationCenter defaultCenter] removeObserver:id name:n object:o]
 #define dispatchEvent(n,o)                      [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
