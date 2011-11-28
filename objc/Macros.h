@@ -2,7 +2,6 @@
 //  Macros.h
 //
 //  Created by John Iacoviello on 11/26/11.
-//  Copyright (c) 2011 Anomaly. All rights reserved.
 //
 
 // Constants
