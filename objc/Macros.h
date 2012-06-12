@@ -86,6 +86,7 @@
 #define setObjectForKey(v, k)                   [USER_DEFAULTS setObject:v forKey:k]
 #define setDoubleForKey(v, k)                   [USER_DEFAULTS setDouble:v forKey:k]
 #define setURLForKey(v, k)                      [USER_DEFAULTS setURL:v forKey:k]
+#define saveUserDefaults()                      [USER_DEFAULTS synchronize]
 
 // NSLog only in debug mode
 #if DEBUG == 1
