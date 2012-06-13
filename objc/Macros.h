@@ -12,7 +12,8 @@
 #define APPLICATION                             [UIApplication sharedApplication]
 #define BUNDLE                                  [NSBundle mainBundle]
 #define MAIN_SCREEN                             [UIScreen mainScreen]
-#define DOCUMENTS_DIR                           [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]
+#define FILE_MANAGER                            [NSFileManager defaultManager]
+#define DOCUMENTS_DIR                           [[FILE_MANAGER URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]
 #define NAV_BAR                                 self.navigationController.navigationBar
 #define TAB_BAR                                 self.tabBarController.tabBar
 #define DATE_COMPONENTS                         NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
@@ -41,6 +42,7 @@
 #define distance(a,b)                           sqrtf((a-b) * (a-b))
 #define point(x,y)                              CGPointMake(x, y)
 #define append(a,b)                             [a stringByAppendingString:b];
+#define fileExistsAtPath(path)                  [FILE_MANAGER fileExistsAtPath: path]
 
 // Colors
 #define hex_rgba(c)                             [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
