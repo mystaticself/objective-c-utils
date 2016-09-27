@@ -81,7 +81,7 @@
 #define integerForKey(k)                        [USER_DEFAULTS integerForKey:k]
 #define objectForKey(k)                         [USER_DEFAULTS objectForKey:k]
 #define doubleForKey(k)                         [USER_DEFAULTS doubleForKey:k]
-#define urlForKey(k)                            [USER_DEFAULTS urlForKey:k]
+#define urlForKey(k)                            [USER_DEFAULTS URLForKey:k]
 #define setBoolForKey(v, k)                     [USER_DEFAULTS setBool:v forKey:k]
 #define setFloatForKey(v, k)                    [USER_DEFAULTS setFloat:v forKey:k]
 #define setIntegerForKey(v, k)                  [USER_DEFAULTS setInteger:v forKey:k]
